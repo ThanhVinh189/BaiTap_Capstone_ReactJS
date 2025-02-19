@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 90px;
+}
+
+.title {
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.title span {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.6);
+  padding: 5px;
+}
+
+.title h2 {
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 44px;
+  color: #333;
+  margin-top: 10px;
+}
+
+.title p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  color: rgba(0, 0, 0, 0.7);
+  margin: 12px 0 0;
+  text-align: center;
+}
+
+.ant-btn-primary {
+  background-color: blue;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.react-multi-carousel-dot button {
+  background-color: gray;
+}
+
+.react-multi-carousel-dot--active button {
+  background-color: white;
+}
+
+.ant-picker-focused {
+  box-shadow: none;
+}
+
+@layer utilities {
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4));
+    border-radius: 20px;
+  }
+
+  body {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Định nghĩa cho custom-button */
+.custom-button:hover {
+  background-color: #5a00b3b1; /* Màu nền khi hover */
+  color: #fff; /* Màu chữ khi hover */
+}
+
+/* Định nghĩa cho disabled-button */
+.disabled-button:hover {
+  background-color: #d9d9d9; /* Màu nền khi hover */
+  color: #888; /* Màu chữ khi hover */
+}
+
+.custom-dots li button {
+  background-color: white !important;
+}
+
+.custom-dots li.slick-active button {
+  background-color: orange !important;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  scrollbar-width: none;
+}
+
+.modalCustom {
+  max-width: 800px;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.modalCustom iframe {
+  border: none;
+  width: 100%;
+  height: 450px;
+}
+
+.ant-menu-item-selected {
+  background-color: #1890ff !important;
+  color: white !important;
+}
+
+.ant-menu-item:hover {
+  background-color: #40a9ff !important;
+  color: white !important;
+}
+
+.truncate-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  max-width: 300px;
+  font-size: 16px;
+}
