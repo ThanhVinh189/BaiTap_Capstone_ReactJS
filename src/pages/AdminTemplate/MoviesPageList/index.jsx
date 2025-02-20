@@ -40,7 +40,6 @@ export default function MoviesPageList() {
     setFilteredMovies(movies);
   }, [movies]);
 
-  // Tìm kiếm phim theo tên
   const handleSearch = (value) => {
     const filtered = movies.filter((movie) =>
       movie.tenPhim.toLowerCase().includes(value.toLowerCase())

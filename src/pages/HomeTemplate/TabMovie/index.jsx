@@ -160,7 +160,6 @@ export default function TabMovie() {
             if (!selectedMovie || !selectedMovie.lstLichChieuTheoPhim)
               return <p>Không có lịch chiếu</p>;
 
-            // 🔹 Nhóm lịch chiếu theo ngày
             const groupedByDate = selectedMovie.lstLichChieuTheoPhim.reduce(
               (acc, lich) => {
                 const date = new Date(
@@ -168,7 +167,7 @@ export default function TabMovie() {
                 ).toLocaleDateString("vi-VN", {
                   day: "2-digit",
                   month: "2-digit",
-                }); // ✅ Chỉ lấy ngày & tháng (bỏ năm)
+                });
                 if (!acc[date]) acc[date] = [];
                 acc[date].push(lich);
                 return acc;

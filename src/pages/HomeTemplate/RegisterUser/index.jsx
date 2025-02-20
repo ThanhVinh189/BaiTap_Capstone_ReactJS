@@ -71,7 +71,6 @@ export default function RegisterPage() {
       const messageError = error.response.data.content;
       console.log("messageError: ", messageError);
 
-      // hiển thị noti
       toast.error(messageError, {
         position: "bottom-right",
         theme: "colored",

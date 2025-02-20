@@ -52,7 +52,7 @@ export default function UsersPage() {
   };
 
   const handleAddUser = () => {
-    navigate("/admin/add-user"); // Điều hướng đến trang thêm người dùng
+    navigate("/admin/add-user");
   };
 
   const columns = [
@@ -173,9 +173,9 @@ export default function UsersPage() {
           size="large"
           style={{
             width: "100%",
-            height: "40px", // Tăng chiều cao của hộp tìm kiếm
+            height: "40px",
             borderRadius: "4px",
-            fontSize: "16px", // Tăng kích thước chữ
+            fontSize: "16px",
           }}
         />
       </div>

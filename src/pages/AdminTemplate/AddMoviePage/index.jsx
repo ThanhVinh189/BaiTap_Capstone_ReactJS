@@ -90,7 +90,7 @@ export default function AddMoviePage() {
       });
       toast.success("Thêm phim thành công!", {
         position: "bottom-right",
-        autoClose: 1000, // Giảm thời gian hiện thông báo còn 1 giây
+        autoClose: 1000, 
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,

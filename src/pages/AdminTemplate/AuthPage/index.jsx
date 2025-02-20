@@ -42,7 +42,7 @@ export default function AuthPage() {
       });
       setTimeout(() => {
         window.location.href = "/";
-      }, 200); // Chờ toast hiển thị xong rồi mới chuyển trang
+      }, 200);
     }
   }, []);
 

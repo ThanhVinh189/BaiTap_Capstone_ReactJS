@@ -22,15 +22,14 @@ export default function CreateShowtimes() {
     maRap: "",
     ngayChieuGioChieu: "",
     giaVe: "",
-    maNhom: "GP07", // Sử dụng mã nhóm GP07
+    maNhom: "GP07",
   });
 
-  // 🆕 Cập nhật maPhim khi component đã mount
   useEffect(() => {
     if (maPhim) {
       setForm((prev) => ({
         ...prev,
-        maPhim: maPhim, // Gán maPhim vào form
+        maPhim: maPhim,
       }));
     }
   }, [maPhim]);
@@ -38,7 +37,7 @@ export default function CreateShowtimes() {
 
   useEffect(() => {
     if (maPhim) {
-      dispatch(fetchThongTinPhim(maPhim)); // Gọi API lấy thông tin phim
+      dispatch(fetchThongTinPhim(maPhim));
     }
   }, [maPhim, dispatch]);
 
@@ -46,7 +45,6 @@ export default function CreateShowtimes() {
     dispatch(fetchHeThongRap());
   }, [dispatch]);
 
-  // 🆕 Định dạng ngày giờ theo yêu cầu API
   const formatDateTime = (dateTime) => {
     const date = new Date(dateTime);
     const day = String(date.getDate()).padStart(2, "0");
@@ -58,7 +56,6 @@ export default function CreateShowtimes() {
     return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
   };
 
-  // 🆕 Cập nhật form khi thay đổi giá trị
   const handleChange = (name, value) => {
     setForm({ ...form, [name]: value });
   };
@@ -66,7 +63,7 @@ export default function CreateShowtimes() {
   const handleSelectHeThongRap = (value) => {
     if (value) {
       dispatch(fetchCumRap(value));
-      setForm({ ...form, maRap: "" }); // Reset cụm rạp khi đổi hệ thống rạp
+      setForm({ ...form, maRap: "" });
     }
   };
 
@@ -75,7 +72,7 @@ export default function CreateShowtimes() {
 
     const payload = {
       ...form,
-      ngayChieuGioChieu: formattedDate, // Định dạng lại ngày giờ
+      ngayChieuGioChieu: formattedDate,
     };
 
     dispatch(createShowtime(payload));

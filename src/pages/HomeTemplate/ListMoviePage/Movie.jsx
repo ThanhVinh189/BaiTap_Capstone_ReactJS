@@ -12,7 +12,6 @@ export default function Movie({ movie }) {
   const [isHover, setIsHover] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Xử lý mở và đóng modal
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 

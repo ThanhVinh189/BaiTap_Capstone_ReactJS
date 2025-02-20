@@ -14,7 +14,7 @@ import { Button, Layout, Menu, Dropdown, Space, Avatar } from "antd";
 import { ToastContainer, toast } from "react-toastify";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useLocation } from "react-router-dom"; // Thêm dòng này
+import { useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
 
 const { Header, Sider, Content } = Layout;
@@ -23,8 +23,7 @@ const AdminLayout = ({ children }) => {
   const [collapsed, setCollapsed] = useState(false);
   const [hoTen, setHoTen] = useState("Admin");
   const navigate = useNavigate();
-  const location = useLocation(); // Lấy URL hiện tại
-
+  const location = useLocation();
   useEffect(() => {
     const userInfo = JSON.parse(localStorage.getItem("userInfo"));
     if (userInfo && userInfo.hoTen) {
@@ -53,7 +52,7 @@ const AdminLayout = ({ children }) => {
 
     setTimeout(() => {
       window.location.reload();
-    }, 2000); // Chờ 2 giây rồi reload trang
+    }, 2000);
   };
 
   const userMenuItems = [
@@ -191,7 +190,7 @@ const AdminLayout = ({ children }) => {
             style={{
               margin: "24px 16px",
               padding: 15,
-              minHeight: "calc(100vh - 64px - 48px)", // Trừ chiều cao của Header và khoảng cách
+              minHeight: "calc(100vh - 64px - 48px)",
               background: "#fff",
               borderRadius: "8px",
             }}

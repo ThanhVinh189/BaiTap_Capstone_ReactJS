@@ -38,7 +38,6 @@ export default function UpdateMoviePage() {
   const [previewImage, setPreviewImage] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  // Lấy thông tin phim khi load trang
   useEffect(() => {
     const fetchMovieDetails = async () => {
       setLoading(true);
@@ -85,14 +84,13 @@ export default function UpdateMoviePage() {
         console.log("error", error);
         console.log("Error response:", error.response.data);
       } finally {
-        setLoading(false); // Đảm bảo dừng loading
+        setLoading(false);
       }
     };
 
     fetchMovieDetails();
   }, [maPhim, form]);
 
-  // Handle Date Change
   const handleDateChange = (date, dateString) => {
     setMovie({
       ...movie,
@@ -100,7 +98,6 @@ export default function UpdateMoviePage() {
     });
   };
 
-  // Handle Switch Change
   const handleSwitchChange = (checked, name) => {
     setMovie({
       ...movie,
@@ -108,12 +105,10 @@ export default function UpdateMoviePage() {
     });
   };
 
-  // Handle Image Upload
   const onUploadChange = ({ fileList: newFileList }) => {
     setFileList(newFileList);
   };
 
-  // Handle Submit
   const handleSubmit = async (values) => {
     console.log("Submit Movie:", values);
 
@@ -206,10 +201,7 @@ export default function UpdateMoviePage() {
           <Input.TextArea rows={4} />
         </Form.Item>
         <Form.Item label="Ngày Khởi chiếu" name="ngayKhoiChieu">
-          <DatePicker
-            format="YYYY-MM-DD" // Phải khớp với định dạng của moment khi set
-            onChange={handleDateChange}
-          />
+          <DatePicker format="YYYY-MM-DD" onChange={handleDateChange} />
         </Form.Item>
         <Form.Item label="Đang Chiếu" name="dangChieu">
           <Switch

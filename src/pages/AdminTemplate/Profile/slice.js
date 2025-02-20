@@ -1,14 +1,13 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import api from "./../../../services/api";
 
-// Thunk lấy thông tin người dùng
 export const fetchUserInfo = createAsyncThunk(
   "profile/fetchUserInfo",
   async (_, { rejectWithValue }) => {
     try {
       const result = await api.post("/QuanLyNguoiDung/ThongTinTaiKhoan");
       const userInfo = result.data.content;
-      // Kiểm tra quyền truy cập
+
       if (userInfo.maLoaiNguoiDung === "KhachHang") {
         return rejectWithValue("Bạn không có quyền truy cập trang này");
       }
@@ -19,7 +18,6 @@ export const fetchUserInfo = createAsyncThunk(
   }
 );
 
-// Thunk cập nhật thông tin người dùng
 export const updateUser = createAsyncThunk(
   "profile/updateUser",
   async (data, { rejectWithValue }) => {
@@ -37,7 +35,7 @@ export const updateUser = createAsyncThunk(
 
 const initialState = {
   user: null,
-  status: "idle", // idle | loading | succeeded | failed
+  status: "idle",
   error: null,
 };
 

@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import api from "./../../../services/api";
 
-// Thunk để gọi API lấy danh sách phim
 export const fetchMoviesPage = createAsyncThunk(
   "moviesPageList/fetchMovies",
   async (__dirname, { rejectWithValue }) => {
@@ -14,7 +13,6 @@ export const fetchMoviesPage = createAsyncThunk(
   }
 );
 
-// Thunk để gọi API xóa phim
 export const deleteMoviePage = createAsyncThunk(
   "moviesPageList/deleteMovie",
   async (maPhim, { rejectWithValue }) => {
@@ -39,7 +37,7 @@ const moviesPageListSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      // Lấy danh sách phim
+
       .addCase(fetchMoviesPage.pending, (state) => {
         state.loading = true;
       })
@@ -51,13 +49,13 @@ const moviesPageListSlice = createSlice({
         state.loading = false;
         state.error = action.payload;
       })
-      // Xóa phim
+
       .addCase(deleteMoviePage.pending, (state) => {
         state.loading = true;
       })
       .addCase(deleteMoviePage.fulfilled, (state, action) => {
         state.loading = false;
-        // Loại bỏ phim đã xóa khỏi state
+
         state.movies = state.movies.filter(
           (movie) => movie.maPhim !== action.payload
         );

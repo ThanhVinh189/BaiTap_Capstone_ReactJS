@@ -9,13 +9,13 @@ function Seat({ seat }) {
     (state) => state.bookingTicketReducer
   );
 
-  // ✅ Tối ưu hóa bằng useMemo để kiểm tra ghế đang chọn
+
   const isChoosing = useMemo(
     () => listSeatsSelected.some((item) => item.maGhe === seat.maGhe),
     [listSeatsSelected, seat.maGhe]
   );
 
-  // ✅ Tối ưu hóa bằng useCallback để tránh tạo lại hàm khi re-render
+
   const handleSeatClick = useCallback(() => {
     dispatch(setSeatSelected(seat));
   }, [dispatch, seat]);
@@ -29,10 +29,10 @@ function Seat({ seat }) {
         seat.daDat
           ? "bg-gray-400 cursor-not-allowed"
           : isChoosing
-          ? "bg-green-500 hover:bg-green-600" // 🔥 Đổi màu xanh cho ghế đang chọn
+          ? "bg-green-500 hover:bg-green-600"
           : seat.loaiGhe === "Vip"
-          ? "bg-yellow-500 hover:bg-yellow-600" // 🔥 Giữ màu vàng khi chưa chọn
-          : "bg-blue-500 hover:bg-blue-600" // 🔥 Ghế thường khi chưa chọn
+          ? "bg-yellow-500 hover:bg-yellow-600" 
+          : "bg-blue-500 hover:bg-blue-600" 
       }`}
     >
       {seat.tenGhe}

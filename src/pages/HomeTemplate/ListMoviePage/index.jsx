@@ -8,12 +8,8 @@ import { fetchListMovie } from "./slice";
 export default function ListMoviePage() {
   const state = useSelector((state) => state.listMovieReducer);
   const dispatch = useDispatch();
-
-  // Tạo ref cho từng tab
   const nowShowingRef = useRef(null);
   const comingSoonRef = useRef(null);
-
-  // Quản lý tab đang chọn
   const [activeTab, setActiveTab] = useState("1");
 
   useEffect(() => {

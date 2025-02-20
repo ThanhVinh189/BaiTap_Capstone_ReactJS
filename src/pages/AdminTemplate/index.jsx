@@ -31,7 +31,6 @@ export default function AdminTemplate() {
     return <Navigate to="/" />;
   }
 
-  // Nếu chưa login => Redirect về trang /auth
   if (!data) {
     return <Navigate to="/auth" />;
   }

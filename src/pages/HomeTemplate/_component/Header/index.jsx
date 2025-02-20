@@ -11,7 +11,6 @@ export default function Header() {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.LoginReducer.data);
 
-  // Xử lý Đăng xuất
   const handleLogout = () => {
     dispatch(logout());
     toast.success("Đăng xuất thành công!", {
@@ -26,7 +25,6 @@ export default function Header() {
     });
   };
 
-  // Menu trong Dropdown
   const items = [
     {
       key: "1",

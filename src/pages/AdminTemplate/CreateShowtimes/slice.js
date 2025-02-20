@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import api from "./../../../services/api";
 
-// Thunk để lấy thông tin hệ thống rạp
 export const fetchHeThongRap = createAsyncThunk(
   "createShowtimes/fetchHeThongRap",
   async (__dirname, { rejectWithValue }) => {
@@ -14,7 +13,6 @@ export const fetchHeThongRap = createAsyncThunk(
   }
 );
 
-// Thunk để lấy thông tin cụm rạp theo hệ thống
 export const fetchCumRap = createAsyncThunk(
   "createShowtimes/fetchCumRap",
   async (maHeThongRap, { rejectWithValue }) => {
@@ -43,7 +41,6 @@ export const fetchThongTinPhim = createAsyncThunk(
   }
 );
 
-// Thunk để tạo lịch chiếu
 export const createShowtime = createAsyncThunk(
   "createShowtimes/createShowtime",
   async (showtimeData, { rejectWithValue }) => {
@@ -79,7 +76,7 @@ const createShowtimesSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      // fetchHeThongRap
+
       .addCase(fetchHeThongRap.pending, (state) => {
         state.loading = true;
       })
@@ -91,7 +88,7 @@ const createShowtimesSlice = createSlice({
         state.loading = false;
         state.error = action.payload;
       })
-      // fetchCumRap
+
       .addCase(fetchCumRap.pending, (state) => {
         state.loading = true;
       })
@@ -103,7 +100,7 @@ const createShowtimesSlice = createSlice({
         state.loading = false;
         state.error = action.payload;
       })
-      // fetchThongTinPhim
+
       .addCase(fetchThongTinPhim.pending, (state) => {
         state.loading = true;
       })
@@ -116,7 +113,6 @@ const createShowtimesSlice = createSlice({
         state.error = action.payload;
       })
 
-      // createShowtime
       .addCase(createShowtime.pending, (state) => {
         state.loading = true;
         state.successMessage = null;

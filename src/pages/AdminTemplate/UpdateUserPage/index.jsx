@@ -38,7 +38,6 @@ export default function UpdateUserPage() {
   }, [user, form]);
   console.log("User state:", user);
 
-  // Lấy danh sách loại người dùng
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
@@ -85,7 +84,6 @@ export default function UpdateUserPage() {
     fetchData();
   }, [taiKhoan]);
 
-  // Xử lý submit form
   const onFinish = async (values) => {
     try {
       await api.post("/QuanLyNguoiDung/CapNhatThongTinNguoiDung", {
