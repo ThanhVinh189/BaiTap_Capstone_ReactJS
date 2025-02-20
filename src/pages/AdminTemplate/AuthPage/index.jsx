@@ -84,7 +84,7 @@ export default function AuthPage() {
     <div
       className="min-h-screen flex justify-center items-center bg-gray-100/50 relative "
       style={{
-        backgroundImage: "url('./images/bg-admin.jpg')",
+        backgroundImage: "url('/images/bg-admin.jpg')",
       }}
     >
       <Card className="w-full max-w-sm p-5 shadow-lg rounded-lg">
